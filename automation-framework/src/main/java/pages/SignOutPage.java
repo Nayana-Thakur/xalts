@@ -34,9 +34,7 @@ public class SignInPage {
         driver.findElement(gotoSignInButton).click();
     }
 
-    public String getErrorMessage() {
-        WebElement errorMessage = driver.findElement(By.id("error"));
-        return errorMessage.getText();
+    public void clickSignOutButton() {
+        driver.findElement(signOutButton).click();
     }
 }
-
