@@ -8,12 +8,14 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.Test;
 import pages.SignUpPage;
 import pages.SignInPage;
+import pages.SignOutPage;
 
 public class SignUpPageTest {
 
     WebDriver driver;
     SignUpPage signupPage;
     SignInPage signinPage;
+    SignOutPage signoutPage;
 
     @BeforeClass
     public void setup() {
@@ -22,6 +24,7 @@ public class SignUpPageTest {
 
         signupPage = new SignUpPage(driver);
         signinPage = new SignInPage(driver);
+      	signoutPage = new SignOutPage(driver);
     }
 
     @Test(priority = 1)
@@ -50,12 +53,12 @@ public class SignUpPageTest {
 
     @Test(priority = 1)
     public void testSignOutWithValidData() {
-        signinPage.clickgotoSignInButton();
-        signinPage.enterEmail("testuser@example.com");
-        signinPage.enterPassword("Amazon1!");
+        signoutPage.clickgotoSignInButton();
+        signoutPage.enterEmail("testuser@example.com");
+        signoutPage.enterPassword("Amazon1!");
 
-        signinPage.clickSignInButton();
-        signinPage.clickSignOutButton();
+        signoutPage.clickSignInButton();
+        signoutPage.clickSignOutButton();
 
         String expectedUrl = "https://xaltsocnportal.web.app/";
         Assert.assertEquals(driver.getCurrentUrl(), expectedUrl);
@@ -66,4 +69,3 @@ public class SignUpPageTest {
         driver.quit();
     }
 }
-
