@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<suite name="TestSuite">
+    <test name="SignUp-In-Out Test">
+        <classes>
+            <class name="tests.Test"/>
+        </classes>
+    </test>
+</suite>
+
